@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/entities/Player/script/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/icon.png" type="Texture" id=2]
@@ -12,15 +12,13 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32, 32 )
-
 [node name="Node2D" type="Node2D"]
 position = Vector2( 512, 300 )
 script = ExtResource( 3 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 position = Vector2( 448, 240 )
+z_index = 1
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -29,8 +27,10 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
 frames = SubResource( 1 )
 
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="KinematicBody2D"]
-shape = SubResource( 2 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KinematicBody2D"]
+position = Vector2( -32, -27 )
+build_mode = 1
+polygon = PoolVector2Array( 0, 54, 0, 0, 4, -5, 60, -5, 64, -1, 64, 54, 60, 59, 5, 59 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
 current = true
@@ -44,10 +44,10 @@ drag_margin_right = 0.4
 drag_margin_bottom = 0.4
 
 [node name="Debug" type="VBoxContainer" parent="KinematicBody2D"]
-margin_left = -198.0
-margin_top = -241.0
-margin_right = -87.0
-margin_bottom = -84.0
+margin_left = -29.0
+margin_top = -157.0
+margin_right = 82.0
+margin_bottom = -35.0
 size_flags_horizontal = 7
 __meta__ = {
 "_edit_use_anchors_": false

@@ -1,7 +1,10 @@
 extends VBoxContainer
 
 func _ready():
-	pass
+	if GlobalData.debug:
+		get_node("DebugBox/DebugStat").text = "on"
+	else:
+		get_node("DebugBox/DebugStat").text = "off"
 
 # Signals
 func _on_Back_gui_input(event:InputEvent):
@@ -27,8 +30,10 @@ func _on_Debug_gui_input(event:InputEvent):
 		var DebugStat = get_node("DebugBox/DebugStat")
 		if DebugStat.text == "off":
 			DebugStat.text = "on"
+			GlobalData.debug = true
 		else:
 			DebugStat.text = "off"
+			GlobalData.debug = false
 
 func _on_WindowModeMenu_item_selected(index:int):
 	match index:

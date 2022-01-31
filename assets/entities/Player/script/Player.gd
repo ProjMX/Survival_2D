@@ -23,15 +23,17 @@ func _physics_process(delta):
 		speed = clamp(speed-(Mass-MaxMass), 50, 100) 
 		noise = speed+10
 	
-	# R Reset (Debug)
-	if Input.is_key_pressed(KEY_R):
-		Mass = 40
-	# PagUp +1 Mass (Debug)
-	if Input.is_key_pressed(KEY_PAGEUP):
-		Mass += 1
-	# PagDown -1 Mass (Debug)
-	if Input.is_key_pressed(KEY_PAGEDOWN):
-		Mass -= 1
+	if GlobalData.debug:
+		# R Reset (Debug)
+		if Input.is_key_pressed(KEY_R):
+			Mass = 40
+		# PagUp +1 Mass (Debug)
+		if Input.is_key_pressed(KEY_PAGEUP):
+			Mass += 1
+		# PagDown -1 Mass (Debug)
+		if Input.is_key_pressed(KEY_PAGEDOWN):
+			Mass -= 1
+	
 	Mass = abs(Mass)
 	
 	# Shift sprint
@@ -63,12 +65,13 @@ func _physics_process(delta):
 		noise = 0
 		
 	# Debug label
-	get_node("Debug/Mass").text = "Mass: " + str(Mass)
-	get_node("Debug/Speed").text = "Speed: " + str(speed)
-	get_node("Debug/Noise").text = "Noise: " + str(noise)
-	get_node("Debug/Direction").text = "Direction: " + str(direction)
-	get_node("Debug/FPS").text = "FPS: " + str(Engine.get_frames_per_second())
-	get_node("Debug/Proc_phisics").text = "Proc_phisics: " + str(get_physics_process_delta_time())
-	get_node("Debug/Process").text = "Process: " + str(get_process_delta_time())
+	if GlobalData.debug:
+		get_node("Debug/Mass").text = "Mass: " + str(Mass)
+		get_node("Debug/Speed").text = "Speed: " + str(speed)
+		get_node("Debug/Noise").text = "Noise: " + str(noise)
+		get_node("Debug/Direction").text = "Direction: " + str(direction)
+		get_node("Debug/FPS").text = "FPS: " + str(Engine.get_frames_per_second())
+		get_node("Debug/Proc_phisics").text = "Proc_phisics: " + str(get_physics_process_delta_time())
+		get_node("Debug/Process").text = "Process: " + str(get_process_delta_time())
 
 	
