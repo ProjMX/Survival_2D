@@ -14,6 +14,10 @@ config/name="Project_Mx"
 run/main_scene="res://scenes/SceneSwitcher/SceneSwitcher.tscn"
 config/icon="res://assets/icon.png"
 
+[autoload]
+
+GlobalData="*res://scenes/GlobalData.gd"
+
 [display]
 
 window/size/width=1920
