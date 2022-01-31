@@ -1,0 +1,6 @@
+# Godot-specific ignores
+.import/
+
+*.translation
+
+*.log

@@ -1,0 +1,312 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/fonts/Orbitron/static/Orbitron-SemiBold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/Chakra_Petch/ChakraPetch-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/MainMenu/MenuEntries.gd" type="Script" id=3]
+[ext_resource path="res://scenes/MainMenu/SettingsEntries.gd" type="Script" id=4]
+[ext_resource path="res://scenes/MainMenu/MainMenu.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+font_data = ExtResource( 2 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 200.0
+margin_top = 100.0
+margin_right = -200.0
+margin_bottom = -100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/MarginContainer"]
+margin_right = 1520.0
+margin_bottom = 880.0
+
+[node name="Title" type="Label" parent="Menu/MarginContainer/VBoxContainer"]
+margin_right = 1520.0
+margin_bottom = 101.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+custom_fonts/font = SubResource( 1 )
+text = "Project MX"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="MenuEntries" type="VBoxContainer" parent="Menu/MarginContainer/VBoxContainer"]
+margin_top = 442.0
+margin_right = 1520.0
+margin_bottom = 880.0
+size_flags_vertical = 11
+script = ExtResource( 3 )
+
+[node name="SinglePlayer" type="Label" parent="Menu/MarginContainer/VBoxContainer/MenuEntries"]
+margin_right = 300.0
+margin_bottom = 66.0
+focus_mode = 1
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+custom_fonts/font = SubResource( 2 )
+text = "Single Player"
+valign = 1
+
+[node name="MultiPlayer" type="Label" parent="Menu/MarginContainer/VBoxContainer/MenuEntries"]
+visible = false
+margin_top = 70.0
+margin_right = 269.0
+margin_bottom = 136.0
+focus_mode = 1
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+custom_fonts/font = SubResource( 2 )
+text = "Multi Player"
+valign = 1
+
+[node name="Settings" type="Label" parent="Menu/MarginContainer/VBoxContainer/MenuEntries"]
+margin_top = 70.0
+margin_right = 192.0
+margin_bottom = 136.0
+rect_pivot_offset = Vector2( -407, -259 )
+focus_mode = 1
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+custom_fonts/font = SubResource( 2 )
+text = "Settings"
+valign = 1
+
+[node name="Exit" type="Label" parent="Menu/MarginContainer/VBoxContainer/MenuEntries"]
+margin_top = 140.0
+margin_right = 226.0
+margin_bottom = 206.0
+focus_mode = 1
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+custom_fonts/font = SubResource( 2 )
+text = "Exit Game"
+valign = 1
+
+[node name="Settings" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 200.0
+margin_top = 100.0
+margin_right = -200.0
+margin_bottom = -100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer"]
+margin_right = 1520.0
+margin_bottom = 880.0
+
+[node name="SettingsTitle" type="Label" parent="Settings/MarginContainer/VBoxContainer"]
+margin_right = 1520.0
+margin_bottom = 101.0
+custom_fonts/font = SubResource( 3 )
+text = "Settings"
+valign = 1
+uppercase = true
+
+[node name="SettingsEntries" type="VBoxContainer" parent="Settings/MarginContainer/VBoxContainer"]
+margin_top = 313.0
+margin_right = 1520.0
+margin_bottom = 601.0
+size_flags_vertical = 6
+script = ExtResource( 4 )
+
+[node name="ToggleWIPBox" type="HSplitContainer" parent="Settings/MarginContainer/VBoxContainer/SettingsEntries"]
+margin_right = 1520.0
+margin_bottom = 66.0
+
+[node name="ToggleWIP" type="Label" parent="Settings/MarginContainer/VBoxContainer/SettingsEntries/ToggleWIPBox"]
+margin_right = 252.0
+margin_bottom = 66.0
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 2
+size_flags_vertical = 8
+custom_fonts/font = SubResource( 4 )
+text = "Toggle WIP"
+align = 1
+valign = 1
+
+[node name="ToggleWIPStat" type="Label" parent="Settings/MarginContainer/VBoxContainer/SettingsEntries/ToggleWIPBox"]
+margin_left = 1098.0
+margin_right = 1187.0
+margin_bottom = 66.0
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+custom_fonts/font = SubResource( 4 )
+text = "off"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="DebugBox" type="HSplitContainer" parent="Settings/MarginContainer/VBoxContainer/SettingsEntries"]
+margin_top = 70.0
+margin_right = 1520.0
+margin_bottom = 136.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Debug" type="Label" parent="Settings/MarginContainer/VBoxContainer/SettingsEntries/DebugBox"]
+margin_right = 313.0
+margin_bottom = 66.0
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 2
+size_flags_vertical = 8
+custom_fonts/font = SubResource( 4 )
+text = "Toggle Debug"
+align = 1
+valign = 1
+
+[node name="DebugStat" type="Label" parent="Settings/MarginContainer/VBoxContainer/SettingsEntries/DebugBox"]
+margin_left = 1109.0
+margin_right = 1176.0
+margin_bottom = 66.0
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+custom_fonts/font = SubResource( 4 )
+text = "on"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="WindowMode" type="HSplitContainer" parent="Settings/MarginContainer/VBoxContainer/SettingsEntries"]
+margin_top = 140.0
+margin_right = 1520.0
+margin_bottom = 212.0
+
+[node name="WindowMode" type="Label" parent="Settings/MarginContainer/VBoxContainer/SettingsEntries/WindowMode"]
+margin_top = 6.0
+margin_right = 312.0
+margin_bottom = 72.0
+size_flags_horizontal = 2
+size_flags_vertical = 8
+custom_fonts/font = SubResource( 4 )
+text = "Window Mode"
+align = 1
+valign = 1
+
+[node name="WindowModeMenu" type="OptionButton" parent="Settings/MarginContainer/VBoxContainer/SettingsEntries/WindowMode"]
+margin_left = 1012.0
+margin_right = 1274.0
+margin_bottom = 72.0
+size_flags_horizontal = 6
+custom_fonts/font = SubResource( 5 )
+text = "Windowed"
+flat = true
+align = 1
+items = [ "Windowed", null, false, 0, null, "Borderless", null, false, 1, null, "Full Screen", null, false, 2, null ]
+selected = 0
+
+[node name="WindowSize" type="HSplitContainer" parent="Settings/MarginContainer/VBoxContainer/SettingsEntries"]
+margin_top = 216.0
+margin_right = 1520.0
+margin_bottom = 288.0
+
+[node name="WindowSize" type="Label" parent="Settings/MarginContainer/VBoxContainer/SettingsEntries/WindowSize"]
+margin_top = 6.0
+margin_right = 283.0
+margin_bottom = 72.0
+size_flags_horizontal = 2
+size_flags_vertical = 8
+custom_fonts/font = SubResource( 4 )
+text = "Window Size"
+align = 1
+valign = 1
+
+[node name="WindowSizeMenu" type="OptionButton" parent="Settings/MarginContainer/VBoxContainer/SettingsEntries/WindowSize"]
+margin_left = 917.0
+margin_right = 1368.0
+margin_bottom = 72.0
+size_flags_horizontal = 6
+custom_fonts/font = SubResource( 5 )
+text = "1080p (1920x1080)"
+flat = true
+align = 1
+expand_icon = true
+items = [ "1080p (1920x1080)", null, false, 0, null, "720p (1280x720)", null, false, 1, null ]
+selected = 0
+
+[node name="Back" type="Label" parent="Settings/MarginContainer/VBoxContainer"]
+margin_left = 669.0
+margin_top = 814.0
+margin_right = 851.0
+margin_bottom = 880.0
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+custom_fonts/font = SubResource( 4 )
+text = "<< Back"
+align = 1
+valign = 1
+
+[connection signal="gui_input" from="Menu/MarginContainer/VBoxContainer/MenuEntries/SinglePlayer" to="." method="_on_SinglePlayer_gui_input"]
+[connection signal="gui_input" from="Menu/MarginContainer/VBoxContainer/MenuEntries/Settings" to="Menu/MarginContainer/VBoxContainer/MenuEntries" method="_on_Settings_gui_input"]
+[connection signal="gui_input" from="Menu/MarginContainer/VBoxContainer/MenuEntries/Exit" to="Menu/MarginContainer/VBoxContainer/MenuEntries" method="_on_Exit_gui_input"]
+[connection signal="gui_input" from="Settings/MarginContainer/VBoxContainer/SettingsEntries/ToggleWIPBox/ToggleWIP" to="Settings/MarginContainer/VBoxContainer/SettingsEntries" method="_on_ToggleWIP_gui_input"]
+[connection signal="gui_input" from="Settings/MarginContainer/VBoxContainer/SettingsEntries/DebugBox/Debug" to="Settings/MarginContainer/VBoxContainer/SettingsEntries" method="_on_Debug_gui_input"]
+[connection signal="item_selected" from="Settings/MarginContainer/VBoxContainer/SettingsEntries/WindowMode/WindowModeMenu" to="Settings/MarginContainer/VBoxContainer/SettingsEntries" method="_on_WindowModeMenu_item_selected"]
+[connection signal="item_selected" from="Settings/MarginContainer/VBoxContainer/SettingsEntries/WindowSize/WindowSizeMenu" to="Settings/MarginContainer/VBoxContainer/SettingsEntries" method="_on_WindowModeSize_item_selected"]
+[connection signal="gui_input" from="Settings/MarginContainer/VBoxContainer/Back" to="Settings/MarginContainer/VBoxContainer/SettingsEntries" method="_on_Back_gui_input"]

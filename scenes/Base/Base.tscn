@@ -1,0 +1,122 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/entities/Player/script/Player.gd" type="Script" id=1]
+[ext_resource path="res://assets/icon.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Base/Base.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 32 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 512, 300 )
+script = ExtResource( 3 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 448, 240 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+frames = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 10.0
+drag_margin_left = 0.4
+drag_margin_top = 0.4
+drag_margin_right = 0.4
+drag_margin_bottom = 0.4
+
+[node name="Debug" type="VBoxContainer" parent="KinematicBody2D"]
+margin_left = -198.0
+margin_top = -241.0
+margin_right = -87.0
+margin_bottom = -84.0
+size_flags_horizontal = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mass" type="Label" parent="KinematicBody2D/Debug"]
+margin_right = 111.0
+margin_bottom = 14.0
+size_flags_horizontal = 5
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speed" type="Label" parent="KinematicBody2D/Debug"]
+margin_top = 18.0
+margin_right = 111.0
+margin_bottom = 32.0
+size_flags_horizontal = 5
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Noise" type="Label" parent="KinematicBody2D/Debug"]
+margin_top = 36.0
+margin_right = 111.0
+margin_bottom = 50.0
+size_flags_horizontal = 5
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Direction" type="Label" parent="KinematicBody2D/Debug"]
+margin_top = 54.0
+margin_right = 111.0
+margin_bottom = 68.0
+valign = 1
+
+[node name="FPS" type="Label" parent="KinematicBody2D/Debug"]
+margin_top = 72.0
+margin_right = 111.0
+margin_bottom = 86.0
+valign = 1
+
+[node name="Proc_phisics" type="Label" parent="KinematicBody2D/Debug"]
+margin_top = 90.0
+margin_right = 111.0
+margin_bottom = 104.0
+valign = 1
+
+[node name="Process" type="Label" parent="KinematicBody2D/Debug"]
+margin_top = 108.0
+margin_right = 111.0
+margin_bottom = 122.0
+valign = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 76, 249 )
+rotation = -0.764454
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( -32.0685, -28.4075 )
+build_mode = 1
+polygon = PoolVector2Array( -0.351563, 0.0888672, 0.111389, 55.9528, 5.16373, 60.7979, 59.6138, 60.3645, 64.4588, 55.3122, 64.0255, 0.862061, 58.9732, -3.98291, 4.52307, -3.54956 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+texture = ExtResource( 2 )
