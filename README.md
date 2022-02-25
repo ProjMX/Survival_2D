@@ -38,7 +38,7 @@
 
 - [ ] Aggiungere Npc
 
-- [ ] Costruzione Base (Singolo Layer (Per Ora))
+- [ ] Costruzione Base (Singolo Layer)
 
 - [ ] Ambiente
   
