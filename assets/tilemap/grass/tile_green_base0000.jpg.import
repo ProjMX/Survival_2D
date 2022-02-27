@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/NPC.png-737c7ba06ef13616083067cb7bf2d651.stex"
+path="res://.import/tile_green_base0000.jpg-290c5518deddadd16465957b43b23339.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/entities/NPC/textures/NPC.png"
-dest_files=[ "res://.import/NPC.png-737c7ba06ef13616083067cb7bf2d651.stex" ]
+source_file="res://assets/tilemap/grass/tile_green_base0000.jpg"
+dest_files=[ "res://.import/tile_green_base0000.jpg-290c5518deddadd16465957b43b23339.stex" ]
 
 [params]
 
