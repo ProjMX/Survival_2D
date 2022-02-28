@@ -58,7 +58,7 @@ func _physics_process(delta):
 		direction += Vector2.RIGHT
 	
 	# Movement calc
-	move_and_slide(direction.normalized() * (speed*150) * delta)
+	move_and_slide(direction.normalized() * (speed*125) * delta)
 	
 	# Noise 0 calc
 	if direction == Vector2.ZERO:
